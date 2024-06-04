@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #7a597e;
+        }
+
+        .calculator {
+            margin-top: 300px;
+            padding-bottom: 100px;
+            width: 430px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .display {
+
+            height: 80px;
+            width: 430px;
+            background-color: #caa3cc;
+            color: white;
+            text-align: right;
+            font-size: 2rem;
+            padding: 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .btn {
+            background-color: #a17b99;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.5rem;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn.function {
+            background-color: #b56576;
+        }
+
+        .btn:hover {
+            background-color: #7a597e;
+        }
+
+        #off,
+        #del,
+        #ac {
+            background-color: #d9534f;
+        }
+
+        #on {
+            background-color: #5cb85c;
+        }
+
+        .icon-item {
+            text-align: center;
+            color: #495057;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            padding: 10px 0;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-icons i {
+            font-size: 1.5rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h1 style="text-align: center;">Calculator</h1>
+        <div class="display" id="display"></div>
+        <div class="buttons">
+            <button class="btn function" id="sales">Sales</button>
+            <button class="btn function" id="expense">Expense</button>
+            <button class="btn" id="sqrt">√</button>
+            <button class="btn" id="cube">x^3</button>
+            <button class="btn" id="square">x^2</button>
+            <button class="btn" id="off">OFF</button>
+            <button class="btn" id="on">ON</button>
+            <button class="btn" id="del">DEI</button>
+            <button class="btn" id="ac">AC</button>
+            <button class="btn" id="percent">%</button>
+            <button class="btn" id="open-parenthesis">(</button>
+            <button class="btn" id="close-parenthesis">)</button>
+            <button class="btn number" id="7">7</button>
+            <button class="btn number" id="8">8</button>
+            <button class="btn number" id="9">9</button>
+            <button class="btn" id="divide">/</button>
+            <button class="btn number" id="4">4</button>
+            <button class="btn number" id="5">5</button>
+            <button class="btn number" id="6">6</button>
+            <button class="btn" id="multiply">*</button>
+            <button class="btn number" id="1">1</button>
+            <button class="btn number" id="2">2</button>
+            <button class="btn number" id="3">3</button>
+            <button class="btn" id="subtract">-</button>
+            <button class="btn number" id="0">0</button>
+            <button class="btn" id="dot">.</button>
+            <button class="btn" id="equals">=</button>
+            <button class="btn" id="add">+</button>
+        </div>
+    </div>
+    <div class="footer-icons">
+        <a href="/home.html"><i class="fas fa-home"></i></a>
+        <i class="fas fa-chevron-up"></i>
+        <i class="fas fa-user-circle"></i>
+    </div>
+    <script src="https://kit.fontawesome.com/76c721963f.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const display = document.getElementById('display');
+            const buttons = document.querySelectorAll('.btn');
+            let currentInput = '';
+            let isOn = true;
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => { 
+                    if (!isOn && button.id !== 'on') return;
+                    switch (button.id) {
+                        case 'on':
+                            isOn = true;
+                            display.innerText = '';
+                            break;
+                        case 'off':
+                            isOn = false;
+                            display.innerText = '';
+                            break;
+                        case 'del':
+                            currentInput = currentInput.slice(0, -1);
+                            display.innerText = currentInput;
+                            break;
+                        case 'ac':
+                            currentInput = '';
+                            display.innerText = '';
+                            break;
+                        case 'equals':
+                            try {
+                                currentInput = eval(currentInput);
+                                display.innerText = currentInput;
+                            } catch {
+                                display.innerText = 'Error';
+                            }
+                            break;
+                        case 'sqrt':
+                            currentInput = Math.sqrt(eval(currentInput));
+                            display.innerText = currentInput;
+                            break;
+                        case 'square':
+                            currentInput = Math.pow(eval(currentInput), 2);
+                            display.innerText = currentInput;
+                            break;
+                        case 'cube':
+                            currentInput = Math.pow(eval(currentInput), 3);
+                            display.innerText = currentInput;
+                            break;
+                        default:
+                            currentInput += button.innerText;
+                            display.innerText = currentInput;
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

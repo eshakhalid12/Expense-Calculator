@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .chart {
+            width: 80%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: block;
+            width: 80%;
+            padding: 15px;
+            margin: 10px auto;
+            background-color: #af69af;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #9b5d9b;
+        }
+
+        .icon-item {
+            text-align: center;
+            color: #495057;
+            margin-bottom: 20px;
+        }
+
+        .icon-item img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            padding: 10px 0;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-icons i {
+            font-size: 1.5rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Your Ultimate Expense Tracker <span>📊</span></h1>
+        <img src="expense.jpeg" alt="Expense Chart" class="chart" style="height: 150px;" width="90px">
+        <a href="#" class="button">Expense Input Field</a>
+        <a href="#" class="button">Total Expenditure Calculation</a>
+        <a href="#" class="button">Expense Categories</a>
+        <a href="#" class="button">Budgeting</a>
+    </div>
+    <div class="footer-icons">
+        <a href="/home.html"><i class="fas fa-home"></i></a>
+        <i class="fas fa-chevron-up"></i>
+        <i class="fas fa-user-circle"></i>
+    </div>
+    <script src="https://kit.fontawesome.com/76c721963f.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

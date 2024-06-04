@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #d1a3ff;
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            position: relative;
+        }
+        .search-bar {
+            margin-top: 10px;
+        }
+        .search-bar input {
+            border-radius: 20px;
+            padding: 10px 20px;
+            width: 100%;
+            border: none;
+        }
+        .user-info {
+            margin-top: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        .user-icon {
+            font-size: 2rem;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .content p {
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+        .icon-item {
+            text-align: center;
+            color: #495057;
+            margin-bottom: 20px;
+        }
+        .icon-item img {
+            width: 40px;
+            height: 40px;
+        }
+        .footer-icons {
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            padding: 10px 0;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+        }
+        .footer-icons i {
+            font-size: 1.5rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="user-info">
+            User <span class="user-icon">&#128101;</span>
+        </div>
+    </div>
+    <div class="content">
+        <p>This meticulously designed dashboard seamlessly integrates multiple functionalities for optimal efficiency.</p>
+        <div class="row">
+            <div class="col-4 icon-item">
+                <img src="profit.jpeg" alt="Profit">
+                <div><a href="/profit.html">Profit</a></div>
+            </div>
+            <div class="col-4 icon-item">
+                <img src="calculator.jpeg" alt="Calculator">
+                <div><a href="/calculator.html">Calculator</a></div>
+            </div>
+            <div class="col-4 icon-item">
+                <img src="sale.jpeg" alt="Sales">
+                <div><a href="/sales.html">Sales</a></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 icon-item">
+                <img src="setting.jpeg" alt="Setting">
+                <div><a href="/settings.html">Settings</a></div>
+            </div>
+            <div class="col-4 icon-item">
+                <img src="online pay.jpeg" alt="Online Pay">
+                <div><a href="/onlinePay.html">Online Pay</a></div>
+            </div>
+            <div class="col-4 icon-item">
+                <img src="expense.jpeg" alt="Expense">
+                <div><a href="/expense.html">Expense</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-icons">
+        <a href="/home.html"><i class="fas fa-home"></i></a>
+        <i class="fas fa-chevron-up"></i>
+        <i class="fas fa-user-circle"></i>
+    </div>
+    <script src="https://kit.fontawesome.com/76c721963f.js" crossorigin="anonymous"></script>
+</body>
+</html>
